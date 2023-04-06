@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style-switcher.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--CSS style switcher-->
+    <link rel="stylesheet" href="css/theme/bleu.css" class="alternate-style" title="bleu" disabled>
+    <link rel="stylesheet" href="css/theme/emit.css" class="alternate-style" title="emit" enable>
+    <link rel="stylesheet" href="css/theme/orange.css" class="alternate-style" title="orange" disabled>
+    <link rel="stylesheet" href="css/theme/rose.css" class="alternate-style" title="rose" disabled>
+    <link rel="stylesheet" href="css/theme/rouge.css" class="alternate-style" title="rouge" disabled>
+    <link rel="stylesheet" href="css/theme/vert.css" class="alternate-style" title="vert" disabled>
+    <script src="js/app.js" defer></script>
+    <script src="js/scriptswitcher.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="body_container">
+            <nav class="sidebar">
+                <header>
+                    <div class="py-2 imagelogo">
+                        <span class="image">
+                            <img src="img/emit logo.jpg" alt="logo">
+                        </span>
+            
+                        <div class="txtheader navtxt">
+                            <span>
+                                Emit
+                            </span>
+                            <span>
+                                Scolarite
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu_bar">
+                        <div class="menu">
+                            <div class="text-center mt-4" onclick="searchbtn()">
+                                <label for="" class="searchstyle"><input type="search" placeholder="..."> <i
+                                        class="fa fa-search"></i></label>
+                            </div>
+                            <hr class="container">
+                            <ul class="menulist">
+                                <li class="nav_link  activemenu" id="menu1" onclick='activemen1()'>
+                                    <a href="#dashboard">
+                                        <i class="fa fa-dashboard"></i>
+                                        <span class="navtxt">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nav_link menu" id="menu2" onclick='activemen2()'>
+                                    <a href="#liste">
+                                        <i class="fa fa-list"></i>
+                                        <span class="navtxt">Liste</span>
+                                    </a>
+                                </li>
+                                <li class="nav_link" id="menu3">
+                                    <a href="#maj">
+                                        <i class="fa fa-reply-all"></i>
+                                        <span class="navtxt">Mise a jour</span>
+                                    </a>
+                                </li>
+                                <hr class="container">
+                                <li class="mode">
+                                    <button class="day-night"><i class="fa fa-moon"></i></button>
+                                    <span class="navtxt">Mode</span>
+                                </li>
+                                <li class="nav_link " id="menupallette">
+                                    <a href="#theme" onclick="showpallette()">
+                                        <i class="fa fa-palette"></i>
+                                        <span class="navtxt">Theme</span>
+                                    </a><br>
+            
+                                    <div class="colors" id="activecolor">
+                                        <span class="bleu" onclick="activestyle('bleu')"></span>
+                                        <span class="emit" onclick="activestyle('emit')"></span>
+                                        <span class="orange" onclick="activestyle('orange')"></span>
+                                        <span class="rose" onclick="activestyle('rose')"></span>
+                                        <span class="rouge" onclick="activestyle('rouge')"></span>
+                                        <span class="vert" onclick="activestyle('vert')"></span>
+                                    </div>
+                                </li>
+                                <li class="nav_link " id="menu4">
+                                    <a href="#option">
+                                        <i class="fa fa-cog"></i>
+                                        <span class="navtxt">Option</span>
+                                    </a>
+                                </li>
+                                <div class="bottom_content">
+                                    <hr>
+                                    <li class='nav_link'>
+                                        <a href="#deco">
+                                            <i class="fa fa-sign-out"></i><span class="navtxt">Deconnexion</span>
+                                        </a>
+                                    </li>
+                                </div>
+            
+                            </ul>
+                        </div>
+                        <i class="fa fa-angle-right navshower" onclick="navhideshow()"></i>
+                    </div>
+                </header>
+            </nav>
+            
+            
+            <!-- Debut du contenu de l'appli web =========================================== -->
+            <section class="mainbody">
+                <!-- section contenant le dashboard============================================= -->
+                <section class="dashboard_content hidden " id='dashboard_content'>
+                    <h3 class="titlesection">Dashboard</h3>
+                    <div class="row">
+                        <div class="mt-2 col-md-3">
+                            <div class="carddashboard">
+                                <span>
+                                    2000 <br><span>Etudiants</span>
+                                </span>
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 col-md-3">
+                            <div class="carddashboard">
+                                <span>
+                                    600 <br><span>Professeur</span>
+                                </span>
+                                <i class="fa fa-person-chalkboard"></i>
+                            </div>
+                        </div>
+                        <div class="mt-2 col-md-6">
+                            <div class="carddashboard">
+                                <span>
+                                    2000000 <br><span>Solde</span>
+                                </span>
+                                <i>AR</i>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="mt-3 col-md-6">
+                            <div class="statdashboard">
+                                <div class="statcontainer">
+                                    <div class="stat">
+                                        <div class="statetutotal">
+                                        </div>
+                                        <div class="stathomme">
+                                        </div>
+                                        <div class="statfemme">
+                                        </div>
+            
+                                        <div class="repere">
+                                            <span>H = Homme</span><br>
+                                            <span>F = Femme</span><br>
+                                            <span>E = Etudiant</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="mt-3 col-md-6">
+                                    <div class="hourdashboard ">
+                                        <h4 class="text-center watchsee"></h4>
+                                        <script>
+                                            var x = setInterval(function () {
+                                                var hours = new Date().getHours();
+                                                var minute = new Date().getMinutes();
+                                                var second = new Date().getSeconds();
+                                                if (minute < 10) {
+                                                    minute = "0" + minute;
+                                                    if (second < 10) {
+                                                        second = "0" + second;
+                                                        document.querySelector(".watchsee").innerHTML = hours + " : " + minute +
+                                                            " : " + second;
+                                                    } else {
+                                                        document.querySelector(".watchsee").innerHTML = hours + " : " + minute +
+                                                            " : " + second;
+                                                    }
+                                                }
+                                            }, 1000);
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="mt-3 col-md-6">
+                                    <div class="daydashboard text-center">
+                                        <div class="day">
+                                            <p class="date"></p>
+                                        </div>
+                                        <script>
+                                            var x = setInterval(function () {
+                                                today = new Date();
+                                                annee = today.getFullYear();
+                                                listeMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
+                                                mois = listeMois[today.getMonth()];
+                                                jour = today.getDate();
+                                                listeJour = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+                                                jourNom = listeJour[today.getDay()];
+
+                                                document.querySelector(".date").innerHTML = jourNom + ", " + jour + " " + mois + " " + annee;
+                                            }, 1000);
+                                        </script>
+                                    </div>
+                                    <div class="mt-3 taskddashboard">
+                                        <p>Tache Journaliere</p>
+                                        <span class="text-success">Verification des frais</span>
+                                    </div>
+                                </div>
+            
+                                <div class="container ">
+                                    <div class="mt-3 col-md-6 bg-success eventdashboard">
+                                        <div class="py-5">
+                                            Le flux de l'usage des soldes semble normal
+                                            <span class="fa fa-info-circle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- raccourci ver creation d'eleve==================================================================== -->
+                    <div class="row">
+                        <div class="mt-3 col-md-3 ">
+                            <div class="inscridash">
+                                <i class="fa fa-user-o"></i>
+                                <h3>Nouvelle etudiant</h3>
+                                <button onclick="shortcutcreate()">Ajouter</button>
+                            </div>
+            
+                        </div>
+                        <div class="mt-3 col-md-3 ">
+                            <div class="statpayedashboard">
+                                <h3>Flux des soldes</h3>
+                                <button>Verifier</button>
+                                <i>AR</i>
+                            </div>
+            
+                        </div>
+                        <div class="mt-3 col-md-6 ">
+                            <div class="statpayedashboard">
+                                <div class="cadrecontainer">
+                                    <div class="countstdent">
+                                        <p id="percentstudent">80%</p>
+                                    </div>
+                                    <div class="mt-5 countcontent">
+                                        <div class="col-sm-6">
+                                            <div class="linecount" id="payercount"></div>
+                                            <p>Payer</p>
+                                            <div id="nbp"></div>
+                                        </div>
+                                        <hr>
+                                        <div class="col-sm-6 ">
+                                            <div class="linecount" id="impayercount"></div>
+                                            <p>Non payer</p>
+                                            <div id="nbnp"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            
+                </section>
+            
+                <section class="list_content " id="list_content">
+                    <h3 class="titlesection">Etudiant</h3>
+                    <div class="listsection  " id="listsection">
+                        <div class="container-fluid ">
+                            <div class="mt-4 row etudiantsearch">
+                                <div class="col-3">
+                                    <label for="" class="searchstyle"><input type="search" placeholder="..."> <i
+                                            class="fa fa-search"></i></label>
+                                </div>
+                                <div class="col-3 choice">
+                                    <label for="">Niveau <select name="select" id="">
+                                            <option name=""></option>
+                                            <option name="M2">M2</option>
+                                            <option name="M1">M1</option>
+                                            <option name="L3">L3</option>
+                                            <option name="L2">L2</option>
+                                            <option name="L1">L1</option>
+                                        </select>
+                                </div>
+                                <div class="col-3 choice">
+                                    <label for="">Classe <select name="select" id="">
+                                            <option name=""></option>
+                                            <option name="">DA2I</option>
+                                            <option name="">RPM</option>
+                                            <option name="">AES</option>
+                                        </select>
+                                </div>
+                                <div class="col-3">
+                                    <button onclick="addstudent()">
+                                        <i class="fa fa-plus"></i> Ajouter
+                                    </button>
+                                </div>
+                            </div>
+            
+                        </div>
+            
+            
+                        <div class=" mt-5  listeetudiant">
+                            <div class="titleliste">
+                                <div class="mb-3 text-center">
+                                    <table class="tabres">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Matricule
+                                                </th>
+                                                <th>
+                                                    Nom
+                                                </th>
+                                                <th>
+                                                    Prenom
+                                                </th>
+                                                <th>
+                                                    Mention
+                                                </th>
+                                                <th>
+                                                    Niveau
+                                                </th>
+                                                <th>
+                                                    Etat
+                                                </th>
+                                                <th>
+                                                    Frais
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach($student as $student ): ?>
+                                            <tr class="filteractive">
+                                                <td>
+                                                    <p data-label="Matricule">
+                                                        22222
+                                                        <?=$student['num_matri_etu']?>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p data-label="Nom">
+                                                        RASOAMANANA
+                                                        <?=$student['nom_etu']?>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p data-label="Prenom">
+                                                        Razafimanantsoa Andrianina
+                                                        <?=$student['prenom_etu']?>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p data-label="Mention">
+                                                        Da2i
+                                                        <?=$student['parcour_m']?>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p data-label="Niveau">
+                                                        L2
+                                                        <?=$student['classe_m']?>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <div class="row etat" class="activeetudiant" onload="activestudent()"
+                                                        data-label="Etat">
+                                                        <div class="col-2">
+                                                            <span id="activeetudiant"></span>
+                                                        </div>
+                                                        <div class="col-10">
+                                                            <i class="" id="checkeractive"></i> <button class="text-success"
+                                                                onclick="shostudentprofil()"><i
+                                                                    class="fa fa-pen-square"></i></button>
+                                                            <button class="text-danger"><i class="fa fa-trash"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p id="montantrst " data-label="Frais">
+                                                        <?=$student['montant_bank']?>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                                <div class="formmodif hidden">
+                                                    <div class=" mt-3 formulairerecup">
+                                                        <div>
+                                                            <form action="" name="form2">
+                                                                <div class=" formfront">
+                                                                    <div class="profilstudent">
+                                                                        <input type="image">
+                                                                    </div>
+                                                
+                                                                    <div class="row frontinfo">
+                                                                        <div class="col-md-6">
+                                                                            <div class="infotxt">
+                                                                                Matricule: <span id="matristudentmdf"></span>
+                                                                            </div>
+                                                                            <div class="infotxt">
+                                                                                Nom: <span id="nomstudentmdf"></span>
+                                                                            </div>
+                                                                            <div class="infotxt">
+                                                                                Prenom: <span id="prenomstudentmdf"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="infotxt">
+                                                                                Niveau: <span id="nivostudentmdf"></span>
+                                                                            </div>
+                                                                            <div class="infotxt">
+                                                                                Mention:<span id="mentionstudentmdf"></span>
+                                                                            </div>
+                                                                            <div class="infotxt">
+                                                                                Bacc:<span id="baccstudentmdf"></span>
+                                                                            </div>
+                                                                        </div>
+                                                
+                                                                        <div class="infotxt">
+                                                                            CIN: <span id="cinstudentmdf"></span>
+                                                                        </div>
+                                                                        <div class="infotxt">
+                                                                            Email: <span id="emailstudentmdf"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="restpayeform bg-danger" onload="payestutend()">
+                                                                        <p class="text-center text-light">reste a pyer</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="formback">
+                                                                    <div class="rect"></div>
+                                                                    <div class="mt-5 infotxt">
+                                                                        Date de naissance: <span id="datenaistudentmdf"></span>
+                                                                    </div>
+                                                                    <div class="infotxt">
+                                                                        Lieu de naissance: <span id="lieudenaistudentmdf"></span>
+                                                                    </div>
+                                                                    <div class="infotxt">
+                                                                        Age: <span id="agestudentmdf"></span>
+                                                                    </div>
+                                                
+                                                                    <div class="infotxt">
+                                                                        Sexe: <span id="Sexestudentmdf"></span>
+                                                                    </div>
+                                                                    <div class="infotxt">
+                                                                        Situation matrimonial: <span id="situationstudentmdf"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="restpaye">
+                                                        <form action="">
+                                                            <div class="mt-3 newpayement inputtext">
+                                                                <span>Droit</span><br><br>
+                                                                <input type="text" name="nom_banqu" placeholder="Banque : BNI ou BOA">
+                                                                <input type="text" name="num_recu" placeholder="N° du reçu">
+                                                                <input type="text" name="montant" placeholder="Montant" onkeyup='pricepay()'>
+                                                                <p class="text-center" name="montantrest" id="priceresult"></p>
+                                                                <div class="text-center">
+                                                                    <button type="button">Valider</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+            
+                                            <?php endforeach;?>
+            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+            
+                    </div>
+                    <div class="mt-5 formstyle hidden" id="formstyle">
+                        <div class="row">
+                            <div class="col-md-6 mt-3 formulairedajout " id="formulairedajout">
+                                <form action="" name="form" method="POST">
+                                    <h3 class="text-center">Nouvel(le) etudiant(e)</h3>
+            
+                                    <div class="controlform">
+                                        <div class="pageform" id="firstpageform">
+                                            <div class="text-center inputtext">
+                                                <input type="text" placeholder="N°matricule" name="matricule_etu"
+                                                    onkeyup="alwaysnumber()">
+                                            </div>
+                                            <div class="text-center inputtext">
+                                                <input type="text" placeholder="Nom" name='nom_etu' onkeyup="uppername()">
+                                            </div>
+                                            <div class="text-center inputtext">
+                                                <input type="text" placeholder="Prenom" name="prenom_etu" onkeyup="capitalname()">
+                                            </div>
+                                            <div class="inputdate">
+                                                <label for="datedenaissance"> Date de naissance </label><br>
+                                                <input type="date" name="datedenaissance_etu" id="datedenaissance"
+                                                    onkeyup="datetype()" onfocus="rotateform()" onchange="rerotateform()">
+            
+                                            </div>
+                                            <div class="text-center inputtext">
+                                                <input type="text" placeholder="Lieu de naissance" name="lieunais_etu"
+                                                    onkeyup="lieuxnais()" onfocus="rotateform()" onchange="rerotateform()">
+                                            </div>
+            
+                                            <div class="text-center inputtext">
+                                                <input type="text" placeholder="XXX-XXX-XXX-XXX CIN" name="cin_etu"
+                                                    onkeyup="cintyping()">
+                                            </div>
+            
+                                            <div class="text-center inputtext">
+                                                <input type="email" name="mail_etu" id="email" placeholder="xxxxxxx@gmail.com"
+                                                    onkeyup="mailtype()">
+                                            </div>
+            
+                                            <div class="text-center mt-3">
+                                                <button type="reset" class="text-light my-3 bg-danger" onclick="resetform()">
+                                                    Annuler
+                                                </button>
+                                                <button class="text-light bg-success" type="button" onclick="Nextpage1()">
+                                                    Suivant
+                                                </button>
+                                            </div>
+                                        </div>
+            
+                                        <div class="pageform" id="secondpageform">
+                                            <div>
+                                                <div class="col-md-6 inputradio pt-2">
+                                                    <span>Sexe</span><br>
+                                                    <label for="homme"><input type="radio" name="choix" id="homme"
+                                                            value="homme">homme</label>
+                                                    <label for="femme"><input type="radio" name="choix" id="femme"
+                                                            value="femme">femme</label>
+                                                </div>
+                                                <br>
+                                                <div class="mt-5 col-md-6 inputcheckbox">
+                                                    <span>Situation matrimonial</span><br>
+                                                    <label for=""><input type="checkbox" name=" situationmatri" id="marie"
+                                                            onclick="disaperbtn()">Marie</label><br>
+                                                    <label for=""><input type="checkbox" name=" situationmatri" id="celib"
+                                                            onclick="disaperbtn()">Celibataire</label>
+                                                </div>
+                                                <p class="text-danger text-warning" id="unseulchoix"></p>
+                                                <div class="text-center mt-3">
+                                                    <button type="reset" class="text-light my-3 bg-danger" onclick="returnpage1()">
+                                                        precedent
+                                                    </button>
+                                                    <button class="text-light bg-success hidden" type="button" id="btndisp"
+                                                        onclick="nextpage2()">
+                                                        Suivant
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="pageform" id="thirdpageform">
+            
+                                            <div class=" row">
+                                                <div class="col-md-4">
+                                                    <label for="">Mention<select name="selectmention_etu" id=""
+                                                            onclick="choicemention()">
+                                                            <option name=""></option>
+                                                            <option name="">DA2I</option>
+                                                            <option name="">RPM</option>
+                                                            <option name="">AES</option>
+                                                        </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="">Niveau <select name="selectnivo_etu" id="" onclick="choiceniv()">
+                                                            <option name=""></option>
+                                                            <option name="M2">M2</option>
+                                                            <option name="M1">M1</option>
+                                                            <option name="L3">L3</option>
+                                                            <option name="L2">L2</option>
+                                                            <option name="L1">L1</option>
+                                                        </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="">Bacc<select name="selectbacc_etu" id="" onclick="choicebacc()">
+                                                            <option name=""></option>
+                                                            <option name="">A</option>
+                                                            <option name="">C</option>
+                                                            <option name="">D</option>
+                                                            <option name="">S</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3 payement inputtext">
+                                                <span>Droit</span><br>
+                                                <input type="text" name="nom_banqu" placeholder="Banque : BNI ou BOA">
+                                                <input type="text" name="num_recu" placeholder="N° du reçu">
+                                                <input type="text" name="montant" placeholder="Montant" onkeyup='pricepay()'>
+                                                <p class="text-center" name="montantrest" id="priceresult"></p>
+                                            </div>
+            
+                                            <div class="text-center mt-3">
+                                                <button type="reset" class="text-light my-3 bg-danger" onclick="returnpage2()">
+                                                    <i class="fa fa-times "></i> precedent
+                                                </button>
+                                                <button class="text-light bg-success" type="submit" name="addstudentsbtn">
+                                                    <i class="fa fa-plus"></i> Ajouter
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="closeform" onclick="closeform()">
+                                        <i class="fa fa-x"></i>
+                                    </div>
+                                </form>
+            
+                            </div>
+                            <div class="col-md-6 mt-3 formulairerecup">
+                                <div>
+                                    <form action="" name="form2">
+                                        <div class=" formfront">
+                                            <div class="profilstudent">
+                                                <input type="image">
+                                            </div>
+            
+                                            <div class="row frontinfo">
+                                                <div class="col-md-6">
+                                                    <div class="infotxt">
+                                                        Matricule: <span id="matristudent"></span>
+                                                    </div>
+                                                    <div class="infotxt">
+                                                        Nom: <span id="nomstudent"></span>
+                                                    </div>
+                                                    <div class="infotxt">
+                                                        Prenom: <span id="prenomstudent"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="infotxt">
+                                                        Niveau: <span id="nivostudent"></span>
+                                                    </div>
+                                                    <div class="infotxt">
+                                                        Mention:<span id="mentionstudent"></span>
+                                                    </div>
+                                                    <div class="infotxt">
+                                                        Bacc:<span id="baccstudent"></span>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="infotxt">
+                                                    CIN: <span id="cinstudent"></span>
+                                                </div>
+                                                <div class="infotxt">
+                                                    Email: <span id="emailstudent"></span>
+                                                </div>
+                                            </div>
+            
+                                        </div>
+                                        <div class="formback">
+                                            <div class="rect"></div>
+                                            <div class="mt-5 infotxt">
+                                                Date de naissance: <span id="datenaistudent"></span>
+                                            </div>
+                                            <div class="infotxt">
+                                                Lieu de naissance: <span id="lieudenaistudent"></span>
+                                            </div>
+                                            <div class="infotxt">
+                                                Age: <span id="agestudent"></span>
+                                            </div>
+            
+                                            <div class="infotxt">
+                                                Sexe: <span id="Sexestudent"></span>
+                                            </div>
+                                            <div class="infotxt">
+                                                Situation matrimonial: <span id="situationstudent"></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+            
+            
+                <section class="Majcontent hidden">
+            
+                </section>
+            
+                <section class="option_content hidden ">
+                    <h3 class="titlesection">Option</h3>
+                    <div class="optionform">
+                        <ul>
+                            <li class="showoption" id="alloptionshow">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <p>Modifier votre profil </p>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btnoption " onclick="alloption()"><i class="fa fa-angle-down"></i></button>
+                                    </div>
+            
+                                </div>
+            
+                                <div class="alloption">
+                                    <h5>Votre profil</h5>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <label for="nom">#Nom</label>
+                                            <p>xxxxxxx</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fa fa-pen"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <label for="nom">#Prenom</label>
+                                            <p>xxxxxxxx</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fa fa-pen"></i>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h5>Vos coordonnée</h5>
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <label for="nom">Email</label>
+                                                <p>xxx@xxx.xxx</p>
+                                            </div>
+                                            <div class="col-2">
+                                                <i class="fa fa-pen"></i>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-10">
+                                                <label for="nom">Contact</label>
+                                                <p>xxxxxxxxxx</p>
+                                            </div>
+                                            <div class="col-2">
+                                                <i class="fa fa-pen"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h5>Securite</h5>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <label for="nom">mot de passe</label>
+                                            <p>xxxxxxxx</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <i class="fa fa-pen"></i>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li class="alloption">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <label for="Supprimer">Supprimer votre compte</label>
+                                    </div>
+                                    <div class="col-2">
+                                        <button><i class="text-danger fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+            
+                        </ul>
+                    </div>
+            
+            
+                    <div class="profiluser">
+            
+                    </div>
+            
+            
+                </section>
+            
+            
+                <div class="carre" id="carre1"></div>
+                <div class="carre" id="carre2"></div>
+                <div class="carre" id="carre3"></div>
+                <div class="carre" id="carre4"></div>
+                <div class="carre" id="carre5"></div>
+            </section>
+    </main>
+
+
+
+</body>

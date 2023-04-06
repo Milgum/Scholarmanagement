@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="public/dist/style.css">
+    <link rel="stylesheet" href="public/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="public/css/styleU.css">
+    <link rel="stylesheet" href="public/css/style-switcher.css">
+    <link rel="stylesheet" href="public/css/teststyle.css">
+
+    <link rel="stylesheet" href="public/css/theme/bleu.css" class="alternate-style" title="bleu" disabled>
+    <link rel="stylesheet" href="public/css/theme/emit.css" class="alternate-style" title="emit" enable>
+    <link rel="stylesheet" href="public/css/theme/orange.css" class="alternate-style" title="orange" disabled>
+    <link rel="stylesheet" href="public/css/theme/rose.css" class="alternate-style" title="rose" disabled>
+    <link rel="stylesheet" href="public/css/theme/rouge.css" class="alternate-style" title="rouge" disabled>
+    <link rel="stylesheet" href="public/css/theme/vert.css" class="alternate-style" title="vert" disabled>
+
+    <!-- app JS -->
+    <script src="public/js/Napp.js" defer></script>
+    <script src="public/js/scriptswitcher.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <form action="" name="formisncription">
+                <div class="grid grid-cols-3">
+                    <div class="registre etu">
+                        <h2>Etudiant</h2>
+                        <div id="page1etu">
+                            <div class="grid grid-cols-3">
+                                <div>
+                                    <label for="">Mention<select name="selectmention_etu" id="" onclick="choicemention()">
+                                            <option name=""></option>
+                                            <option name="">DA2I</option>
+                                            <option name="">RPM</option>
+                                            <option name="">AES</option>
+                                        </select>
+                                </div>
+                                <div>
+                                    <label for="">Niveau <select name="selectnivo_etu" id="" onclick="choiceniv()">
+                                            <option name=""></option>
+                                            <option name="M2">Master 2</option>
+                                            <option name="M1">Master 1</option>
+                                            <option name="L3">License 3</option>
+                                            <option name="L2">License 2</option>
+                                            <option name="L1">License 1</option>
+                                        </select>
+                                </div>
+                                <div>
+                                    <label for="">Bacc<select name="selectbacc_etu" id="" onclick="choicebacc()">
+                                            <option name=""></option>
+                                            <option name="">A</option>
+                                            <option name="">C</option>
+                                            <option name="">D</option>
+                                            <option name="">S</option>
+                                        </select>
+                                </div>
+                            </div>
+                    
+                    <!--         <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Photo</span>
+                                <input type="image" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                            </div> -->
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Nom</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="nom_etu" onkeyup="uppername()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Prenom</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="prenom_etu" onkeyup="capitalisename()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-19 my-3 mx-0 py-0 px-1 grid input-fieldform">
+                                <span class="text-center text-base py-2">Date de Naissance</span>
+                                <input type="date" class=" bg-transparent outline-none border-none font-semibold text-lg" name="date_naissance_etu" onkeyup="datetype()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform" id="cininput">
+                                <span class="text-center text-base pt-5">CIN</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="cin_etu" onchange="cintyping()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Genre</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="sexe_etu" onkeyup="sexe()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Adresse</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="adresse_etu" onkeyup="adrstyping()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Email</span>
+                                <input type="email" class=" bg-transparent outline-none border-none font-semibold text-lg" name="email_etu" onkeyup="mailtyping()">
+                            </div>
+                    
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Telephone</span>
+                                <input type="tel" class=" bg-transparent outline-none border-none font-semibold text-lg" name="tel_etu" onkeyup="teltyping()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="registre parent">
+                        <h2>Parent</h2> 
+                        <div>
+                            <h3>Pere</h3>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Nom </span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="nom_pere" onkeyup="uppernamepere()">
+                            </div>
+
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Prenom </span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="prenom_pere" onkeyup="capitalisenamepere()">
+                            </div>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Adresse </span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="adresse_pere" onkeyup="adrspere()">
+                            </div>
+
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Telephone </span>
+                            <input type="tel" class=" bg-transparent outline-none border-none font-semibold text-lg" name="tel_pere" onkeyup="telpere()">
+                            </div>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Email </span>
+                            <input type="email" class=" bg-transparent outline-none border-none font-semibold text-lg" name="email_pere" onkeyup="mailpere()" >
+                            </div>
+
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Profession </span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="profession_pere"  onkeyup="profesionpere()">
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Mere</h3>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Nom</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="nom_mere" onkeyup="uppernamemere()">
+                            </div>
+                            
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Prenom</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="prenom_mere" onkeyup="capitalisenamemere()">
+                            </div>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Adresse</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="adresse_mere" onkeyup="adrsmere()">
+                            </div>
+                            
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Telephone</span>
+                                <input type="tel" class=" bg-transparent outline-none border-none font-semibold text-lg" name="tel_mere" onkeyup="telmere()">
+                            </div>
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Email</span>
+                                <input type="email" class=" bg-transparent outline-none border-none font-semibold text-lg" name="email_mere" onkeyup="mailmere()">
+                            </div>
+                            
+                            <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                                <span class="text-center text-base pt-5">Profession</span>
+                                <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg" name="profession_mere" onkeyup="profesionmere()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="registre payement">
+                        <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-3">Montant total</span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-19 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base py-3">Type de payement</span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Montant payer</span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-19 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base py-3">Date de payement</span>
+                            <input type="date" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-14 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base pt-5">Reste a payer</span>
+                            <input type="text" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-19 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base py-3">Date limite de payement</span>
+                            <input type="date" class=" bg-transparent outline-none border-none font-semibold text-lg">
+                        </div>
+                        <div class="max-w-sm w-full h-19 my-3 mx-0 py-0 px-2 grid input-fieldform">
+                            <span class="text-center text-base py-3">Statue</span>
+                            <p id="statuts"></p>
+                        </div>
+                    </div>
+                </div>
+             
+
+                <div class="card">
+                    <div>
+                        <div class="infotxt">
+                            Nom: <span id="nomstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Prenom: <span id="prenomstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            CIN: <span id="cinstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Sexe: <span id="Sexestudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Email: <span id="emailstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Telephone: <span id="telstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Niveau: <span id="nivostudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Mention: <span id="mentionstudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Bacc: <span id="baccstudent"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mt-5 infotxt">
+                            Date de naissance: <span id="datenaistudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Age: <span id="agestudent"></span>
+                        </div>
+                        <div class="infotxt">
+                            Adresse: <span id="adrsstudent"></span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="">
+                        <div class="infotxt">
+                           <h3>Mr <span id="nompere"></span> <span id="prenompere"></span></h3>
+                        </div>
+                        <div>
+                            <span id="professionpere"></span>
+                        </div>
+                        <hr>
+                        <div class="infotxt">
+                        <span id="adrspere"></span>
+                        </div>
+                        <div class="infotxt">
+                            <span id="emailpere"></span>
+                        </div>
+                        <div class="infotxt">
+                            <span id="telpere"></span>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="infotxt">
+                            <h3>Mme <span id="nommere"></span> <span id="prenommere"></span></h3>
+                        </div>
+                        <div>
+                            <span id="professionmere"></span>
+                        </div>
+                        <hr>
+                        <div class="infotxt">
+                            <span id="adrsmere"></span>
+                        </div>
+                        <div class="infotxt">
+                            <span id="emailmere"></span>
+                        </div>
+                        <div class="infotxt">
+                            <span id="telmere"></span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+            </form>
+        </div>
+    </div>
+<div class="bg-red-700"></div>
+</body>

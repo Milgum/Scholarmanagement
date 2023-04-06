@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.2.0-web/css/all.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style-switcher.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--CSS style switcher-->
+    <link rel="stylesheet" href="css/theme/bleu.css" class="alternate-style" title="bleu" disabled>
+    <link rel="stylesheet" href="css/theme/emit.css" class="alternate-style" title="emit" enable>
+    <link rel="stylesheet" href="css/theme/orange.css" class="alternate-style" title="orange" disabled>
+    <link rel="stylesheet" href="css/theme/rose.css" class="alternate-style" title="rose" disabled>
+    <link rel="stylesheet" href="css/theme/rouge.css" class="alternate-style" title="rouge" disabled>
+    <link rel="stylesheet" href="css/theme/vert.css" class="alternate-style" title="vert" disabled>
+    <script src="js/app.js" defer></script>
+    <script src="js/scriptswitcher.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="py-2 imagelogo">
+                <span class="image">
+                    <img src="img/emit logo.jpg" alt="logo">
+                </span>
+
+                <div class="txtheader navtxt">
+                    <span>
+                        Emit
+                    </span>
+                    <span>
+                        Scolarite
+                    </span>
+                </div>
+            </div>
+            <div class="menu_bar">
+                <div class="menu">
+                    <div class="text-center mt-4" onclick="searchbtn()">
+                        <label for="" class="searchstyle"><input type="search" placeholder="..."> <i
+                                class="fa fa-search"></i></label>
+                    </div>
+                    <hr class="container">
+                    <ul class="menulist">
+                        <li class="nav_link  activemenu" id="menu1" onclick='activemen1()'>
+                            <a href="#dashboard">
+                                <i class="fa fa-dashboard"></i>
+                                <span class="navtxt">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav_link menu" id="menu2" onclick='activemen2()'>
+                            <a href="#liste">
+                                <i class="fa fa-list"></i>
+                                <span class="navtxt">Liste</span>
+                            </a>
+                        </li>
+                        <li class="nav_link" id="menu3">
+                            <a href="#maj">
+                                <i class="fa fa-reply-all"></i>
+                                <span class="navtxt">Mise a jour</span>
+                            </a>
+                        </li>
+                        <hr class="container">
+                        <li class="mode">
+                            <button class="day-night"><i class="fa fa-moon"></i></button>
+                            <span class="navtxt">Mode</span>
+                        </li>
+                        <li class="nav_link " id="menupallette">
+                            <a href="#theme" onclick="showpallette()">
+                                <i class="fa fa-palette"></i>
+                                <span class="navtxt">Theme</span>
+                            </a><br>
+
+                            <div class="colors" id="activecolor">
+                                <span class="bleu" onclick="activestyle('bleu')"></span>
+                                <span class="emit" onclick="activestyle('emit')"></span>
+                                <span class="orange" onclick="activestyle('orange')"></span>
+                                <span class="rose" onclick="activestyle('rose')"></span>
+                                <span class="rouge" onclick="activestyle('rouge')"></span>
+                                <span class="vert" onclick="activestyle('vert')"></span>
+                            </div>
+                        </li>
+                        <li class="nav_link " id="menu4">
+                            <a href="#option">
+                                <i class="fa fa-cog"></i>
+                                <span class="navtxt">Option</span>
+                            </a>
+                        </li>
+                        <div class="bottom_content">
+                            <hr>
+                            <li class='nav_link'>
+                                <a href="#deco">
+                                    <i class="fa fa-sign-out"></i><span class="navtxt">Deconnexion</span>
+                                </a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+                <i class="fa fa-angle-right navshower" onclick="navhideshow()"></i>
+            </div>
+        </header>
+    </nav>
+    <section>Maj</section>
+
+                <div class="mt-5 formstyle " id="formstyle">
+                    <div class="row">
+                        <div class="col-md-6 mt-3 formulairedajout " id="formulairedajout">
+                            <form action="" name="form" method="POST">
+                                <h3 class="text-center">Nouvel(le) etudiant(e)</h3>
+                
+                                <div class="controlform">
+                                    <div class="pageform" id="firstpageform">
+                                        <div class="text-center inputtext">
+                                            <input type="text" placeholder="N°matricule" name="matricule_etu" onkeyup="alwaysnumber()">
+                                        </div>
+                                        <div class="text-center inputtext">
+                                            <input type="text" placeholder="Nom" name='nom_etu' onkeyup="uppername()">
+                                        </div>
+                                        <div class="text-center inputtext">
+                                            <input type="text" placeholder="Prenom" name="prenom_etu" onkeyup="capitalname()">
+                                        </div>
+                                        <div class="inputdate">
+                                            <label for="datedenaissance"> Date de naissance </label><br>
+                                            <input type="date" name="datedenaissance_etu" id="datedenaissance" onkeyup="datetype()"
+                                                onfocus="rotateform()" onchange="rerotateform()">
+                
+                                        </div>
+                                        <div class="text-center inputtext">
+                                            <input type="text" placeholder="Lieu de naissance" name="lieunais_etu" onkeyup="lieuxnais()"
+                                                onfocus="rotateform()" onchange="rerotateform()">
+                                        </div>
+                
+                                        <div class="text-center inputtext">
+                                            <input type="text" placeholder="XXX-XXX-XXX-XXX CIN" name="cin_etu" onkeyup="cintyping()">
+                                        </div>
+                
+                                        <div class="text-center inputtext">
+                                            <input type="email" name="mail_etu" id="email" placeholder="xxxxxxx@gmail.com"
+                                                onkeyup="mailtype()">
+                                        </div>
+                
+                                        <div class="text-center mt-3">
+                                            <button type="reset" class="text-light my-3 bg-danger" onclick="resetform()">
+                                                Annuler
+                                            </button>
+                                            <button class="text-light bg-success" type="button" onclick="Nextpage1()">
+                                                Suivant
+                                            </button>
+                                        </div>
+                                    </div>
+                
+                                    <div class="pageform" id="secondpageform">
+                                        <div>
+                                            <div class="col-md-6 inputradio pt-2">
+                                                <span>Sexe</span><br>
+                                                <label for="homme"><input type="radio" name="choix" id="homme"
+                                                        value="homme">homme</label>
+                                                <label for="femme"><input type="radio" name="choix" id="femme"
+                                                        value="femme">femme</label>
+                                            </div>
+                                            <br>
+                                            <div class="mt-5 col-md-6 inputcheckbox">
+                                                <span>Situation matrimonial</span><br>
+                                                <label for=""><input type="checkbox" name=" situationmatri" id="marie"
+                                                        onclick="disaperbtn()">Marie</label><br>
+                                                <label for=""><input type="checkbox" name=" situationmatri" id="celib"
+                                                        onclick="disaperbtn()">Celibataire</label>
+                
+                                            </div>
+                                            <p class="text-danger text-warning" id="unseulchoix"></p>
+                                            <div class="text-center mt-3">
+                                                <button type="reset" class="text-light my-3 bg-danger" onclick="returnpage1()">
+                                                    precedent
+                                                </button>
+                                                <button class="text-light bg-success hidden" type="button" id="btndisp"
+                                                    onclick="nextpage2()">
+                                                    Suivant
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="pageform" id="thirdpageform">
+                
+                                        <div class=" row">
+                                            <div class="col-md-4">
+                                                <label for="">Mention<select name="selectmention_etu" id="" onclick="choicemention()">
+                                                        <option name=""></option>
+                                                        <option name="">DA2I</option>
+                                                        <option name="">RPM</option>
+                                                        <option name="">AES</option>
+                                                    </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="">Niveau <select name="selectnivo_etu" id="" onclick="choiceniv()">
+                                                        <option name=""></option>
+                                                        <option name="M2">M2</option>
+                                                        <option name="M1">M1</option>
+                                                        <option name="L3">L3</option>
+                                                        <option name="L2">L2</option>
+                                                        <option name="L1">L1</option>
+                                                    </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="">Bacc<select name="selectbacc_etu" id="" onclick="choicebacc()">
+                                                        <option name=""></option>
+                                                        <option name="">A</option>
+                                                        <option name="">C</option>
+                                                        <option name="">D</option>
+                                                        <option name="">S</option>
+                                                    </select>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 payement inputtext">
+                                            <span>Droit</span><br>
+                                            <input type="text" name="nom_banqu" placeholder="Banque : BNI ou BOA">
+                                            <input type="text" name="num_recu" placeholder="N° du reçu">
+                                            <input type="text" name="montant" placeholder="Montant" onkeyup='pricepay()'>
+                                            <p class="text-center" name="montantrest" id="priceresult"></p>
+                                        </div>
+                
+                                        <div class="text-center mt-3">
+                                            <button type="reset" class="text-light my-3 bg-danger" onclick="returnpage2()">
+                                                <i class="fa fa-times "></i> precedent
+                                            </button>
+                                            <button class="text-light bg-success" type="submit" name="addstudentsbtn">
+                                                <i class="fa fa-plus"></i> Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="closeform" onclick="closeform()">
+                                    <i class="fa fa-x"></i>
+                                </div>
+                            </form>
+                
+                        </div>
+                        <div class="col-md-6 mt-3 formulairerecup">
+                            <div>
+                                <form action="" name="form2">
+                                    <div class=" formfront">
+                                        <div class="profilstudent">
+                                            <input type="image">
+                                        </div>
+                
+                                        <div class="row frontinfo">
+                                            <div class="col-md-6">
+                                                <div class="infotxt">
+                                                    Matricule: <span id="matristudent"></span>
+                                                </div>
+                                                <div class="infotxt">
+                                                    Nom: <span id="nomstudent"></span>
+                                                </div>
+                                                <div class="infotxt">
+                                                    Prenom: <span id="prenomstudent"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="infotxt">
+                                                    Niveau: <span id="nivostudent"></span>
+                                                </div>
+                                                <div class="infotxt">
+                                                    Mention:<span id="mentionstudent"></span>
+                                                </div>
+                                                <div class="infotxt">
+                                                    Bacc:<span id="baccstudent"></span>
+                                                </div>
+                                            </div>
+                
+                                            <div class="infotxt">
+                                                CIN: <span id="cinstudent"></span>
+                                            </div>
+                                            <div class="infotxt">
+                                                Email: <span id="emailstudent"></span>
+                                            </div>
+                                        </div>
+                
+                                    </div>
+                                    <div class="formback">
+                                        <div class="rect"></div>
+                                        <div class="mt-5 infotxt">
+                                            Date de naissance: <span id="datenaistudent"></span>
+                                        </div>
+                                        <div class="infotxt">
+                                            Lieu de naissance: <span id="lieudenaistudent"></span>
+                                        </div>
+                                        <div class="infotxt">
+                                            Age: <span id="agestudent"></span>
+                                        </div>
+                
+                                        <div class="infotxt">
+                                            Sexe: <span id="Sexestudent"></span>
+                                        </div>
+                                        <div class="infotxt">
+                                            Situation matrimonial: <span id="situationstudent"></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>

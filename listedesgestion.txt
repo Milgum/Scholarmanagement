@@ -1,0 +1,248 @@
+Inscription des étudiants : 
+permettre aux étudiants de s'inscrire sur le site web 
+et de fournir leurs informations personnelles, 
+y compris leur nom, leur adresse et leurs informations
+de contact.
+
+Gestion des frais de scolarité : 
+permettre aux étudiants de consulter le montant total des frais
+de scolarité, de voir leur historique de paiement, 
+de payer les frais en ligne et de générer des reçus pour
+leurs paiements.
+
+Gestion des bourses et des subventions : 
+permettre aux étudiants de postuler pour des bourses ou 
+des subventions, de voir leur statut et de recevoir des 
+notifications lorsque des bourses ou des subventions sont 
+disponibles.
+
+Notifications :
+envoyer des notifications automatiques par e-mail 
+ou SMS pour rappeler aux étudiants des échéances de paiement,
+des mises à jour importantes et des événements à venir.
+
+Gestion des rapports financiers : 
+permettre aux administrateurs de générer des
+rapports financiers détaillés, tels que le total des frais de
+scolarité collectés, les paiements en retard, 
+etc.
+
+commande vocal:
+
+Vérifier le solde du compte de l'étudiant
+Vérifier l'historique des paiements
+Effectuer un paiement
+Demander des informations sur les bourses et les subventions
+Obtenir des rappels sur les dates d'échéance des paiements
+
+
+code QR :
+
+Ajoutez une nouvelle
+fonctionnalité à votre interface utilisateur
+pour permettre aux étudiants de scanner le code QR 
+associé à leur frais de scolarité.
+Vous pouvez utiliser une bibliothèque
+de lecture de code QR pour effectuer la lecture.
+
+Après la lecture du code QR,
+vous pouvez afficher les informations associées
+au frais de scolarité, telles que le montant des frais,
+la date limite de paiement, etc.
+
+
+Chat en direct : 
+Ajouter une fonctionnalité de chat en direct peut aider les utilisateurs à 
+obtenir une réponse rapide à leurs questions concernant les frais de scolarité.
+
+Notifications push : 
+Envoyer des notifications push peut aider les utilisateurs à 
+être informés en temps réel de toute information importante concernant les frais de scolarité.
+
+Portefeuille électronique : 
+Permettre aux utilisateurs de stocker leur argent dans un portefeuille électronique 
+peut faciliter le processus de paiement des frais de scolarité.
+
+Intégration du calendrier académique :
+Ajouter un calendrier académique pour les étudiants et 
+les enseignants peut aider à garder tout le monde informé des événements et 
+des dates importantes, y compris les dates de paiement des frais de scolarité.
+
+Paiements par tranches : 
+Si les frais de scolarité peuvent être payés en plusieurs tranches, 
+vous pouvez ajouter une fonctionnalité de paiement par tranches pour 
+permettre aux utilisateurs de payer en plusieurs versements.
+
+Remise pour paiement anticipé : Si l'école offre une remise pour les paiements 
+anticipés des frais de scolarité, vous pouvez ajouter une 
+fonctionnalité pour appliquer automatiquement 
+la remise pour les utilisateurs qui effectuent leur paiement avant la date limite.
+
+Gestion des bourses : 
+Si l'école offre des bourses, vous pouvez ajouter une fonctionnalité de gestion des bourses 
+pour permettre aux étudiants de postuler en ligne et pour que les responsables de l'école puissent gérer les demandes de bourse.
+
+Interface multilingue : 
+Si l'école accueille des étudiants de différents pays ou régions, 
+vous pouvez ajouter une fonctionnalité d'interface multilingue pour faciliter l'utilisation du système 
+de gestion des frais de scolarité pour tous les utilisateurs.
+
+
+mes tables
+Table "Utilisateurs":
+
+ID utilisateur (clé primaire)
+ID étudiant (clé étrangère)
+Nom d'utilisateur
+Mot de passe
+
+Table "Parents":
+
+ID parent (clé primaire)
+ID étudiant (clé étrangère)
+Nom d'utilisateur
+Mot de passe
+
+
+Table "Administrateurs":
+
+ID administrateur (clé primaire)
+Nom d'utilisateur
+Mot de passe
+
+
+
+Table "Étudiants":
+
+ID étudiant (clé primaire)
+Nom de l'étudiant
+numero matricule
+Prénom de l'étudiant
+Date de naissance
+CIN
+Adresse e-mail
+Adresse physique
+Numéro de téléphone
+Niveau d'études
+Parcours
+Photo
+Avatar
+
+
+Table "Frais de scolarité":
+
+ID frais de scolarité (clé primaire)
+ID étudiant (clé étrangère)
+Année scolaire
+Montant des frais de scolarité
+Montant de la bourse accordée
+Montant des frais restants à payer
+Date limite de paiement
+code QR
+
+
+Table "Paiements":
+
+ID paiement (clé primaire)
+ID frais de scolarité (clé étrangère)
+Type de paiement
+Montant du paiement
+Date du paiement
+
+
+Table "Bourses":
+
+ID bourse/subvention (clé primaire)
+ID étudiant (clé étrangère)
+Montant de la bourse
+Date de début de la bourse
+Date de fin de la bourse
+
+
+Table "Notifications":
+
+ID notification (clé primaire)
+ID paiement (clé étrangère)
+ID étudiant (clé étrangère)
+Date de la notification
+Contenu de la notification
+
+Table "Tranche"
+ID_tranche (clé primaire)
+ID_frais_de_scolarite(clé etrangere)
+montant_tranche
+date_limite_paiement
+date_paiement
+
+
+
+
+Affichage
+Liste des étudiants inscrits :
+Affichez la liste complète des étudiants inscrits dans 
+l'établissement scolaire. 
+Vous pouvez inclure des informations telles que le nom de l'étudiant, 
+l'année d'étude, le numéro de matricule et le niveau d'études.
+
+Détails de paiement des frais de scolarité : 
+Affichez les détails des paiements de frais de scolarité 
+de chaque étudiant, y compris le montant payé, 
+la date de paiement et la date limite de paiement. 
+Vous pouvez également inclure des informations sur 
+les frais supplémentaires, tels que les frais de laboratoire, 
+les frais de bibliothèque, etc.
+
+État des paiements : 
+Affichez l'état des paiements de chaque étudiant, 
+y compris les paiements effectués, les paiements en attente 
+et les paiements en retard. Vous pouvez également inclure 
+des informations sur les étudiants qui ont bénéficié de bourses 
+d'études ou de subventions pour couvrir les frais de scolarité.
+
+Statistiques financières :
+Affichez les statistiques financières globales de
+l'établissement scolaire, y compris le total des paiements
+reçus, les paiements en attente, les paiements en retard, 
+les frais supplémentaires et les remboursements.
+
+Messages et alertes : 
+Affichez les messages et les alertes importants liés 
+aux frais de scolarité, tels que les rappels de paiement, 
+les notifications de retard de paiement, les dates limites 
+de paiement à venir, etc.
+
+
+Administrateur : 
+L'administrateur est responsable de la gestion globale 
+du système de gestion des frais de scolarité. 
+Il peut gérer les comptes des utilisateurs, 
+surveiller les paiements, générer des rapports financiers, etc.
+
+Étudiant : 
+L'étudiant est un utilisateur qui est inscrit dans 
+l'établissement scolaire et qui doit payer des frais de 
+scolarité. L'étudiant peut consulter son historique de 
+paiement, effectuer des paiements en ligne, etc.
+
+Parent/tuteur : 
+Le parent ou le tuteur est un 
+utilisateur qui est responsable de payer 
+les frais de scolarité de l'étudiant. 
+Le parent/tuteur peut consulter l'historique de paiement de 
+l'étudiant, effectuer des paiements en ligne, recevoir des 
+rappels de paiement, etc.
+
+Enseignant : 
+L'enseignant est un utilisateur qui travaille dans 
+l'établissement scolaire. Il peut consulter l'historique 
+de paiement des étudiants, générer des rapports financiers 
+pour sa classe, etc.
+
+
+
+Ajout, modification et suppression de contenu, tels que des articles de blog ou des produits de commerce électronique
+Gestion des commentaires et des avis des utilisateurs
+Suivi des commandes et des paiements dans le cas d'un site de commerce électronique
+Configuration et gestion des paramètres du site, tels que la mise en page, les couleurs, les polices, etc.
+Gestion des sauvegardes et des mises à jour du site ou de l'application
+Interaction avec les utilisateurs via des systèmes de messagerie ou de support
